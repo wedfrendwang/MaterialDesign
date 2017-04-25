@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:id="@+id/groud" android:checkableBehavior="single">
+
+    <item android:id="@+id/item_1" android:title="menu_1" android:icon="@mipmap/ic_launcher"></item>
+    <item android:id="@+id/item_2" android:title="menu_2" android:icon="@mipmap/ic_launcher"></item>
+    <item android:id="@+id/item_3" android:title="menu_3" android:icon="@mipmap/ic_launcher"></item>
+    <item android:id="@+id/item_4" android:title="menu_4" android:icon="@mipmap/ic_launcher"></item>
+     </group>
+
+    <item android:title="菜单按钮去">
+        <menu>
+
+            <item android:id="@+id/item_5" android:title="Behavior" android:icon="@mipmap/ic_launcher"></item>
+            <item android:id="@+id/item_6" android:title="Coordinator" android:icon="@mipmap/ic_launcher"></item>
+            <item android:id="@+id/item_7" android:title="TextInputLayout" android:icon="@mipmap/ic_launcher"></item>
+
+        </menu>
+    </item>
+
+
+</menu>
