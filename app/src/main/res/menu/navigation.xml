@@ -19,5 +19,7 @@
         </menu>
     </item>
 
-
+    <item android:title="Behavior" android:icon="@mipmap/ic_launcher"></item>
+    <item android:title="Coordinator" android:icon="@mipmap/ic_launcher"></item>
+    <item  android:title="TextInputLayout" android:icon="@mipmap/ic_launcher"></item>
 </menu>

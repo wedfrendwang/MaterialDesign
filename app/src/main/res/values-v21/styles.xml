@@ -1,9 +1,7 @@
-<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!--5.0版本手机的适配-->
-    <style name="AppTheme" parent="Base.AppTheme">
+
+    <style name="AppTheme" parent="AppTheme.NoActionBar">
         <item name="android:windowDrawsSystemBarBackgrounds">true</item>
         <item name="android:statusBarColor">@android:color/transparent</item>
     </style>
-
 </resources>

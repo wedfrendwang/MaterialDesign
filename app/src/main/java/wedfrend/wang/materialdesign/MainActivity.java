@@ -7,15 +7,19 @@ import android.support.design.widget.NavigationView;
 import android.support.design.widget.Snackbar;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.GravityCompat;
+import android.support.v4.view.MenuItemCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
 import android.util.EventLogTags;
 import android.util.Log;
+import android.view.ContextMenu;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
@@ -26,6 +30,7 @@ import java.util.Locale;
 
 import wedfrend.wang.materialdesign.behavior.defineBehavior;
 import wedfrend.wang.materialdesign.coordinatorlayout.coordinatorActivity;
+import wedfrend.wang.materialdesign.test.testActivity;
 import wedfrend.wang.materialdesign.textinput.textInputActivity;
 
 public class MainActivity extends AppCompatActivity {
@@ -66,6 +71,9 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.item_3:
                         break;
                     case R.id.item_4:
+                        Intent i= new Intent();
+                        i.setClass(MainActivity.this,testActivity.class);
+                        startActivity(i);
                         break;
                     case R.id.item_5:
                         Intent intent = new Intent();
@@ -108,10 +116,44 @@ public class MainActivity extends AppCompatActivity {
 
         List<String> listString = new ArrayList<>();
         for (int i = 0; i <32 ; i++) {
-            listString.add(String.format(Locale.CANADA,"第%02d页",i));
+            listString.add(String.format(Locale.CHINA,"第%02d页",i));
         }
         viewPager.setAdapter(new myAdapter(getSupportFragmentManager(),listString));
         //设置Tablayout的标题头部，但是要注意的是我们必须Adapter中设置一个方法，getPageTitle
         tab.setupWithViewPager(viewPager);
+    }
+
+    /*菜单*/
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_overaction, menu);
+        MenuItem searchItem = menu.findItem(R.id.action_search);
+        SearchView searchView =
+                (SearchView) MenuItemCompat.getActionView(searchItem);
+        MenuItemCompat.getActionView(searchItem);
+        // Configure the search info and add any event listeners...
+        MenuItemCompat.OnActionExpandListener expandListener = new MenuItemCompat.OnActionExpandListener() {
+            @Override
+            public boolean onMenuItemActionCollapse(MenuItem item) {
+                // Do something when action item collapses
+                Log.i(TAG, "onMenuItemActionCollapse: ");
+                return true;     //Return true to collapse action view
+            }
+            @Override
+            public boolean onMenuItemActionExpand(MenuItem item) {
+                // Do something when expanded
+                Log.i(TAG, "onMenuItemActionExpand: ");
+                return true;      // Return true to expand action view
+            }
+        };
+// Get the MenuItem for the action item   MenuItem actionMenuItem = menu.findItem(R.id.myActionItem);
+// Assign the listener to that action item
+        MenuItemCompat.setOnActionExpandListener(searchItem, expandListener);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        return super.onOptionsItemSelected(item);
     }
 }

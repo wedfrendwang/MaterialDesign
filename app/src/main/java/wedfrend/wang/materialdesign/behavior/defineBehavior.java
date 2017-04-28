@@ -66,8 +66,8 @@ public class defineBehavior extends AppCompatActivity {
 //        ActionBar actionBar = getSupportActionBar();
 //        actionBar.setDefaultDisplayHomeAsUpEnabled(true);
 //        actionBar.setTitle("wedfrend");
-        CollapsingToolbarLayout collapsingToolbarLayout = (CollapsingToolbarLayout) findViewById(R.id.collapsing);
-        collapsingToolbarLayout.setTitle("wangxiaobo");
+//        CollapsingToolbarLayout collapsingToolbarLayout = (CollapsingToolbarLayout) findViewById(R.id.collapsing);
+//        collapsingToolbarLayout.setTitle("wangxiaobo");
 
 
     }

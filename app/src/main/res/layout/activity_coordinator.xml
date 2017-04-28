@@ -8,6 +8,15 @@
     android:fitsSystemWindows="true"
     tools:context="wedfrend.wang.materialdesign.coordinatorlayout.coordinatorActivity">
 
+    <android.support.v7.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorAccent"
+        android:layout_gravity="center"
+        >
+    </android.support.v7.widget.Toolbar>
+
+
     <TextView
         android:id="@+id/tv_coordinator"
         android:layout_width="match_parent"
@@ -18,6 +27,7 @@
         android:padding="15dp"
         android:textSize="16sp"
         android:layout_gravity="center"/>
+
     <Button
         android:id="@+id/btn"
         android:layout_width="wrap_content"

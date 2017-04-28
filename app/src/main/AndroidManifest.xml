@@ -19,7 +19,8 @@
         </activity>
         <activity android:name=".coordinatorlayout.coordinatorActivity" />
         <activity android:name=".behavior.defineBehavior" />
-        <activity android:name=".textinput.textInputActivity"></activity>
+        <activity android:name=".textinput.textInputActivity" />
+        <activity android:name=".test.testActivity"></activity>
     </application>
 
 </manifest>
